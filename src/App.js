@@ -1,10 +1,26 @@
 import React from 'react';
+import {
+  BrowserRouter, Route, Routes
+} from "react-router-dom";
+import Admin from './Component/Admin';
+import Home from './Component/Home';
+import Login from './Component/Login';
+import NotFound from './Component/NotFound';
 
 const App = () => {
   return (
-    <div>
-      <h1>start now</h1>
-    </div>
+
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+
+
   );
 };
 
